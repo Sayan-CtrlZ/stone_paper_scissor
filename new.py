@@ -25,41 +25,41 @@ def play_game():
             break
 
         if user_choice not in choices:
-            print("❌ Invalid input! Please enter stone, paper, or scissors.")
+            print(" Invalid input! Please enter stone, paper, or scissors.")
             continue
 
         # 2. Generate computer choice
         computer_choice = random.choice(choices)
-        print(f"🤖 Computer chose: {computer_choice}")
+        print(f" Computer chose: {computer_choice}")
 
         # 3. Determine the round winner
         if user_choice == computer_choice:
-            print(f"🤝 It's a tie! Both chose {user_choice}.")
+            print(f" It's a tie! Both chose {user_choice}.")
         elif (
             (user_choice == "stone" and computer_choice == "scissors")
             or (user_choice == "paper" and computer_choice == "stone")
             or (user_choice == "scissors" and computer_choice == "paper")
         ):
-            print(f"🎉 You win this round! {user_choice.title()} beats {computer_choice}.")
+            print(f" You win this round! {user_choice.title()} beats {computer_choice}.")
             user_score += 1
         else:
             print(
-                f"😢 Computer wins this round! {computer_choice.title()} beats {user_choice}."
+                f" Computer wins this round! {computer_choice.title()} beats {user_choice}."
             )
             computer_score += 1
 
         # 4. Display current standings
-        print(f"📊 Score -> You: {user_score} | Computer: {computer_score}\n")
+        print(f" Score -> You: {user_score} | Computer: {computer_score}\n")
 
     # Final wrap up when user quits
     print("\n================ Game Over ================")
     print(f"Final Score -> You: {user_score} | Computer: {computer_score}")
     if user_score > computer_score:
-        print("🏆 Congratulations! You beat the computer!")
+        print(" Congratulations! You beat the computer!")
     elif user_score < computer_score:
-        print("🤖 Computer wins the overall match. Better luck next time!")
+        print(" Computer wins the overall match. Better luck next time!")
     else:
-        print("🤝 The overall match is a tie!")
+        print(" The overall match is a tie!")
     print("Thanks for playing!")
 
 
